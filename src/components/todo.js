@@ -1,6 +1,7 @@
 import React from 'react';
+import '../App.css';
 
-const TodoList = (props) => {
+const Todo = (props) => {
 
     const deleteHandler = () => {
 
@@ -32,7 +33,7 @@ const TodoList = (props) => {
 
             <ul>
 
-                <li>
+                <li className={`todo-item ${props.todo.completed ? "completed" : '' }`}>
                     {props.text}
                     <button onClick={completeHandler}>a</button>
                     <button onClick={deleteHandler}>d</button>
@@ -46,4 +47,4 @@ const TodoList = (props) => {
 
 }
 
-export default TodoList;
+export default Todo;

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css';
 
 const Form = (props) => {
 
@@ -18,16 +19,28 @@ const Form = (props) => {
 
     }
 
+    const stateHandler = (event) => {
+
+        props.setStatus(event.target.value);
+
+    }
+
     return (
 
         <div>
 
             <form>
 
-            <input onChange={inputChangeHandler} value={props.inputText} type="text"></input>
-            <button onClick={submitHandler} type="submit"></button>
+            <input className="todo-input" onChange={inputChangeHandler} value={props.inputText} type="text"></input>
+            <button className="todo-button" onClick={submitHandler} type="submit"></button>
 
-             
+             <select name="todos" className="filter-todo" onChange={stateHandler}>
+
+                <option value="all">All</option>
+                <option value="completed">Completed</option>
+                <option value="uncompleted">Uncompleted</option>
+
+             </select>
 
             </form>
 
