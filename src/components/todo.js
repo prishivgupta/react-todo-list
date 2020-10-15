@@ -10,6 +10,22 @@ const TodoList = (props) => {
 
     }
 
+    const completeHandler = () => {
+
+        props.setTodos(props.todos.map(todo => {
+
+            if(todo.id === props.todo.id) {
+                return {
+                    ...todo, completed: !todo.completed
+                };
+            }
+
+            return todo;
+
+        }))
+
+    }
+
     return (
 
         <div>
@@ -18,7 +34,7 @@ const TodoList = (props) => {
 
                 <li>
                     {props.text}
-                    <button >a</button>
+                    <button onClick={completeHandler}>a</button>
                     <button onClick={deleteHandler}>d</button>
                 </li>
 
