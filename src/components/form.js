@@ -31,16 +31,24 @@ const Form = (props) => {
 
             <form>
 
-            <input className="todo-input" onChange={inputChangeHandler} value={props.inputText} type="text"></input>
-            <button className="todo-button" onClick={submitHandler} type="submit"></button>
+                <input className="todo-input" onChange={inputChangeHandler} value={props.inputText} type="text"></input>
+                <button className="todo-button" onClick={submitHandler} type="submit">
+                    <i className="fas fa-plus-square"></i>
+                </button>
 
-             <select name="todos" className="filter-todo" onChange={stateHandler}>
+                <div className="select">
 
-                <option value="all">All</option>
-                <option value="completed">Completed</option>
-                <option value="uncompleted">Uncompleted</option>
+                    <select name="todos" className="filter-todo" onChange={stateHandler}>
 
-             </select>
+                        <option value="all">All</option>
+                        <option value="completed">Completed</option>
+                        <option value="uncompleted">Uncompleted</option>
+
+                    </select>
+
+                </div>
+
+                
 
             </form>
 

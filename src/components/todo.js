@@ -7,8 +7,6 @@ const Todo = (props) => {
 
         props.setTodos(props.todos.filter(t => (t.id !== props.todo.id)));
 
-        console.log("FG");
-
     }
 
     const completeHandler = () => {
@@ -29,17 +27,18 @@ const Todo = (props) => {
 
     return (
 
-        <div>
+        <div className="todo">
 
-            <ul>
+            <li className={`todo-item ${props.todo.completed ? "completed" : '' }`}>
+                {props.text}
+            </li>
 
-                <li className={`todo-item ${props.todo.completed ? "completed" : '' }`}>
-                    {props.text}
-                    <button onClick={completeHandler}>a</button>
-                    <button onClick={deleteHandler}>d</button>
-                </li>
-
-            </ul>
+            <button className="complete-btn" onClick={completeHandler}>
+                <i className="fas fa-check"></i>
+            </button>
+            <button className="trash-btn" onClick={deleteHandler}>
+                <i className="fas fa-trash"></i>
+            </button>
 
         </div>
 
